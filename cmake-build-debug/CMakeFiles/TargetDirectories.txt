@@ -1,0 +1,3 @@
+/Users/geppe/Desktop/ripetizioni/cmake-build-debug/CMakeFiles/ripetizioni.dir
+/Users/geppe/Desktop/ripetizioni/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/geppe/Desktop/ripetizioni/cmake-build-debug/CMakeFiles/rebuild_cache.dir
