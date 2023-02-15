@@ -515,10 +515,155 @@ void esercizio18() {
         cout<<somma;
 
 }
+void esercizio19() {
+/*
+    Leggere in input due numeri naturali b e h e in output far scrive un rettangolo di “*” con b asterischi per la base e h per l’altezza.
+    Ad esempio se legge 5 e 3 disegnerà:
+    *****
+    *****
+    *****
+ */
+
+    int b,h;
+    int riga,colonna;
+
+    cout<<"scrivere il numero per la base  ";
+    cin>>b;
+    cout<<"scrivere il numero per l'altezza";
+    cin>>h;
+
+    for(riga=1;riga<=h;riga++)
+    {
+       for(colonna=1;colonna<=b;colonna++)
+       {
+           cout << "*";
+       }
+       cout<<"\n";
+    }
+}
+void esercizio20() {
+    /*
+     * Scrivere un programma che chiede quanti alunni ci sono
+     * in una classe poi per ogni alunno fa inserire 5 voti e ne scrive la media.
+     */
+
+    int alunni;
+    float voto;
+    float media;
+    int alunno,voti;
+
+    cout<<"quanti alunni ci sono?   ";
+    cin>>alunni;
+
+    for(alunno=1;alunno<=alunni;alunno++)
+    {
+        media = 0;
+        for(voti=1;voti<=5;voti++)
+        {
+            cout<<"inserisci un voto ";
+            cin>>voto;
+            media=media+voto;
+        }
+        media=media/5;
+        cout<<"la media del "<<alunno<< " alunno e'  "<<media<<"\n";
+    }
+}
+void esercizio21() {
+    /*"preso in input n>0 mandare in output un triangolo isoscele (albero di Natale) di asterischi\n"
+          "Es. n=5\n"
+          "    *\n"
+          "   ***\n"
+          "  *****\n"
+          " *******\n"
+          "*********\n"*/
+
+    int numero;
+    int riga,asterischi,spazi;
+
+    cout<<"scrivi un numero ";
+    cin>>numero;
+
+    for(riga=1;riga<=numero;riga++)
+    {
+        for(spazi=0;spazi<numero-riga;spazi++)
+        {
+            cout<<" ";
+        }
+        for(asterischi=1;asterischi<riga*2;asterischi++)
+        {
+            cout<<"*";
+        }
+        cout<<"\n";
+    }
+    for(riga=1;riga<numero;riga++)
+    {
+        for(spazi=1;spazi<=riga;spazi++)
+        {
+            cout<<" ";
+        }
+        for (asterischi=1;asterischi<=(numero*2-spazi*2)+1;asterischi++)
+        {
+            cout<<"*";
+        }
+        cout<<"\n";
+    }
+
+
+
+}
+void esercizio22() {
+/*
+Dato un numero n di studenti che hanno una quantità di soldi stabilita dall’utente, ogni giorno  all’intervallo possono acquistare
+al bar della scuola una pastina che costa 1 euro o un panino che costa 1,5 euro.
+Il programma continua a chiedere all’utente cosa mangerà lo studente quel giorno finché ha abbastanza soldi o non ha la possibilità di soddisfare
+il suo appetito con quello che vuole.
+Al termine del programma scrivere in output il numero di giorni in cui il singolo studente ha mangiato e quante volte ha mangiato una pastina e quante un panino.
+*/
+
+int studenti;
+float soldi;
+int nstud;
+int scelta;
+int c=0;
+
+cout<<"quanti studenti ci sono? ";
+cin>>studenti;
+
+    for(nstud=1;nstud<=studenti;nstud++)
+    {
+        soldi=0;
+        c=0;
+        cout<<"quanti soldi ha il "<<nstud<<" studente? \n";
+        cin>>soldi;
+
+        while(soldi>=1)
+        {
+            c++;
+            cout<<"cosa vuoi comprare oggi? ";
+            cout<<"scrivi 1 per la pastina e 2 per il panino ";
+            cin>>scelta;
+
+            if (scelta==2)
+            {
+                if (soldi >= 1.5) {
+                    soldi = soldi - 1.5;
+                    cout << "ti sono rimasti " << soldi << "\n";
+                }
+            }
+            else {
+                soldi=soldi-1;
+                    cout<<"ti sono rimasti "<<soldi<<"\n";
+            }
+        }
+        cout<<"non hai abbastanza soldi\n";
+        cout<<"e ha mangiato per "<<c <<" giorni\n";
+    }
+}
+
 int main() {
-    int choice;
-    cout<<"Quale esercizio vuoi fare? ";
-    cin>>choice;
+    int choice = 22;
+    /*cout<<"Quale esercizio vuoi fare? ";
+    cin>>choice;*/
 
     switch (choice) {
         case 1:
@@ -574,6 +719,15 @@ int main() {
              break;
         case 18:
             esercizio18();
+            break;
+        case 19:
+            esercizio19();
+        case 20:
+            esercizio20();
+        case 21:
+            esercizio21();
+        case 22:
+            esercizio22();
             break;
     }
 }
