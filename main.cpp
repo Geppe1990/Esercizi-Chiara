@@ -658,10 +658,127 @@ cin>>studenti;
         cout<<"non hai abbastanza soldi\n";
         cout<<"e ha mangiato per "<<c <<" giorni\n";
     }
+};
+
+void esercizio23() {
+	// Dato un array di 100 elementi compresi tra -100 e 100 mandare in output tutti i valori negativi
+
+	const int dim=100;
+	int a[dim];
+	int i;
+
+	srand(time(NULL));
+	for(i=0;i<dim;i++)
+	{
+		a[i] = rand() % 201 + (-100);
+		cout<< a[i]<<" ";
+
+	}
+	cout<<"\n\n";
+	for (i = 0; i < dim; i++)
+	{
+		if(a[i]<0)
+			cout<<a[i]<<" ";
+	}
+}
+
+void esercizio24() {
+	// Dato un array di 30 elementi compresi tra 3 e 10 dire quante volte appare un valore in input
+
+	const int dim=30;
+	int a[dim];
+	int i;
+	int n;
+	int c=0;
+
+	srand(time(NULL));
+	for(i=0;i<dim;i++)
+	{
+		a[i]=rand() % 8+3;
+		cout<<a[i]<<"  ";
+	}
+	cout<<"scrivi un numero:  ";
+	cin>>n;
+	for(i=0;i<dim;i++)
+	{
+		if(a[i]==n)
+		c++;
+	}
+	cout<<"\n\n";
+	cout<<c;
+}
+
+void esercizio25() {
+	// Estraendo numeri da 1 a 90 effettuando un certo numero
+	//  di estrazioni dire quante volte è uscito un numero
+
+	const int dim=100;
+	int a[dim];
+	int i,n;
+
+	srand(time(NULL));
+	for(i=0;i<dim;i++)
+	{ 
+		a[i]= rand()%91+1;
+		cout<<a[i]<<"  ";
+	}
+	cout<<"\n\n";
+	
+	
+	for(n=1;n<90;n++)
+	{
+		int c=0;
+		for(i=0;i<dim;i++)
+		{
+			if (n==a[i])
+			{
+				c++;
+			}
+		}
+		cout<<"ho trovato il numero"<<n<<" "<<c<<" volte""\n";
+	}
+}
+
+void esercizio26() {
+	// Es 23. Leggere un array di interi di 10 posizioni e stampare il numero che compare 
+	// più volte all’interno dell’array, qualora ci siano più numeri che compaiano 
+	// lo stesso numero di volte stamparli tutti.
+
+	const int dim=10;
+	int a[dim];
+	int i,n,c,f;
+	int g=0;
+
+	srand(time(NULL));
+	for(i=0;i<dim;i++)
+	{a[i]=rand ()%10+0;
+	cout<<a[i]<<"  ";
+	}
+
+	cout<<"\n\n";
+	for(n=0;n<11;n++)
+	{
+		c=0;
+		for(i=0;i<dim;i++)
+		{
+			if(n==a[i])
+			{
+			c++;	
+			}
+			
+		}
+		if(c>g)
+		{
+			g=c;
+			f=n;
+		}
+	
+	}
+	cout<<"il nuemro"<<f<<"e' apparso"<<g<<"volte";
 }
 
 int main() {
-    int choice = 22;
+    int choice = 26;
     /*cout<<"Quale esercizio vuoi fare? ";
     cin>>choice;*/
 
@@ -729,6 +846,18 @@ int main() {
         case 22:
             esercizio22();
             break;
-    }
+		case 23:
+			esercizio23();
+			break;
+		case 24:
+			esercizio24();
+			break;
+		case 25:
+			esercizio25();
+			break;
+		case 26:
+			esercizio26();
+			break;
+	}
 }
 
