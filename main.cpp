@@ -764,7 +764,7 @@ void esercizio26() {
 		{
 			if(n==a[i])
 			{
-			c++;	
+				c++;	
 			}
 			
 		}
