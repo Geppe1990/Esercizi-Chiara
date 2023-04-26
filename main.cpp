@@ -751,8 +751,9 @@ void esercizio26() {
 
 	srand(time(NULL));
 	for(i=0;i<dim;i++)
-	{a[i]=rand ()%10+0;
-	cout<<a[i]<<"  ";
+	{
+		a[i]=rand ()%10+0;
+		cout<<a[i]<<"  ";
 	}
 
 	cout<<"\n\n";
